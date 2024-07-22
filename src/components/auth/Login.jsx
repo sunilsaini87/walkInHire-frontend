@@ -62,7 +62,7 @@ const Login = () => {
 
   return (
     <>
-      <section className="bg-slate-500 min-h-screen flex flex-col">
+      <section className="bg-[url('/walkin.jpg')] bg-cover bg-center min-h-screen flex flex-col">
         <Navbar />
         <div className="flex items-center justify-center flex-grow text-white">
           <form
@@ -92,6 +92,7 @@ const Login = () => {
                 className="w-full"
               />
             </div>
+            <Label>Role</Label>
             <RadioGroup className="flex items-center gap-4 my-5">
               <div className="flex items-center space-x-2">
                 <input

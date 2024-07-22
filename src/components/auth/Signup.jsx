@@ -78,7 +78,7 @@ const Signup = () => {
 
   return (
     <>
-      <section className="bg-slate-500 min-h-screen flex flex-col">
+      <section className="bg-[url('/walkin.jpg')] bg-contain bg-no-repeat bg-center min-h-screen flex flex-col">
         <Navbar />
         <div className="flex flex-grow items-center justify-center px-6 py-8 mx-auto w-full">
           <div className="w-full bg-slate-700 text-white rounded-lg shadow dark:border sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
