@@ -7,6 +7,7 @@ import Navbar from "./shared/Navbar";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useGetAllJobs from "@/hooks/useGetAllJobs";
+import HomeContent from "./HomeContent";
 
 const Home = () => {
   useGetAllJobs();
@@ -23,6 +24,7 @@ const Home = () => {
       <HeroSection />
       <CategoryCarousel />
       <LatestJobs />
+      <HomeContent />
       <Footer />
     </div>
   );
