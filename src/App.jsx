@@ -3,7 +3,7 @@ import Jobs from "./components/Jobs";
 import Home from "./components/Home";
 import JobDescription from "./components/JobDescription";
 import Login from "./components/auth/Login";
-import Singup from "./components/auth/Singup";
+import Signup from "./components/auth/Signup";
 import Profile from "./components/Profile";
 import PostJob from "./components/PostedJobs";
 import Companies from "./components/Companies";
@@ -37,7 +37,7 @@ const appRouter = createBrowserRouter([
   },
   {
     path: "/signup",
-    element: <Singup />,
+    element: <Signup />,
   },
   {
     path: "/profile",

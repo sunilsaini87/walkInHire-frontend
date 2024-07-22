@@ -12,7 +12,7 @@ import { setLoading } from "@/redux/authSlice";
 import { Loader2 } from "lucide-react";
 import Footer from "../shared/Footer";
 
-const Singup = () => {
+const Signup = () => {
   const [input, setInput] = useState({
     fullname: "",
     email: "",
@@ -28,6 +28,7 @@ const Singup = () => {
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
+
   const changeFileHandler = (e) => {
     setInput({ ...input, file: e.target.files?.[0] });
   };
@@ -66,20 +67,21 @@ const Singup = () => {
       dispatch(setLoading(false));
     }
   };
+
   useEffect(() => {
     if (authUser?.role === "recruiter") {
       navigate("/admin/companies");
     } else if (authUser?.role === "student") {
       navigate("/");
     }
-  }, []);
+  }, [authUser, navigate]);
 
   return (
     <>
-      <section className="bg-slate-500">
+      <section className="bg-slate-500 min-h-screen flex flex-col">
         <Navbar />
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <div className="w-full bg-slate-700 text-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div className="flex flex-grow items-center justify-center px-6 py-8 mx-auto w-full">
+          <div className="w-full bg-slate-700 text-white rounded-lg shadow dark:border sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <form onSubmit={submitHandler} className="space-y-2 md:space-y-6">
                 <h1 className="font-bold text-xl mb-1 text-center">Sign Up</h1>
@@ -91,6 +93,7 @@ const Singup = () => {
                     name="fullname"
                     onChange={changeEventHandler}
                     placeholder="Full Name"
+                    className="w-full"
                   />
                 </div>
                 <div className="my-1">
@@ -101,6 +104,7 @@ const Singup = () => {
                     name="email"
                     onChange={changeEventHandler}
                     placeholder="Email@gmail.com"
+                    className="w-full"
                   />
                 </div>
                 <div className="my-1">
@@ -111,6 +115,7 @@ const Singup = () => {
                     name="phoneNumber"
                     onChange={changeEventHandler}
                     placeholder="+911234567890"
+                    className="w-full"
                   />
                 </div>
                 <div className="my-1">
@@ -121,9 +126,11 @@ const Singup = () => {
                     name="password"
                     onChange={changeEventHandler}
                     placeholder="Password"
+                    className="w-full"
                   />
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="my-1">
+                  <Label>Role</Label>
                   <RadioGroup className="flex items-center gap-4 my-1">
                     <div className="flex items-center space-x-2">
                       <Input
@@ -149,7 +156,7 @@ const Singup = () => {
                     </div>
                   </RadioGroup>
                 </div>
-                <div className="flex items-center gap-1">
+                <div className="my-1">
                   <Label>Profile</Label>
                   <Input
                     accept="image/*"
@@ -171,7 +178,7 @@ const Singup = () => {
                 <span className="text-sm">
                   Already have an account?{" "}
                   <Link
-                    to={"/login"}
+                    to="/login"
                     className="text-blue-400 cursor-pointer underline"
                   >
                     Login
@@ -187,4 +194,4 @@ const Singup = () => {
   );
 };
 
-export default Singup;
+export default Signup;

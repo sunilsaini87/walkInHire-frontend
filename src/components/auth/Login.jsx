@@ -58,15 +58,16 @@ const Login = () => {
     } else if (authUser?.role === "student") {
       navigate("/");
     }
-  }, []);
+  }, [authUser, navigate]);
+
   return (
     <>
-      <section className="bg-slate-500">
+      <section className="bg-slate-500 min-h-screen flex flex-col">
         <Navbar />
-        <div className="flex items-center justify-center max-w-7xl mx-auto  text-white mt-4">
+        <div className="flex items-center justify-center flex-grow text-white">
           <form
             onSubmit={submitHandler}
-            className="w-1/2 rounded-md p-4 my-10 bg-slate-700"
+            className="w-full max-w-md mx-4 p-4 rounded-md bg-slate-700"
           >
             <h1 className="font-bold text-xl mb-4 text-center">Login</h1>
             <div className="my-2">
@@ -77,6 +78,7 @@ const Login = () => {
                 value={input.email}
                 onChange={changeEventHandler}
                 placeholder="Email@gmail.com"
+                className="w-full"
               />
             </div>
             <div className="my-2">
@@ -87,12 +89,10 @@ const Login = () => {
                 value={input.password}
                 onChange={changeEventHandler}
                 placeholder="Password"
+                className="w-full"
               />
             </div>
-            <RadioGroup
-              defaultValue="comfortable"
-              className="flex items-center gap-4 my-5"
-            >
+            <RadioGroup className="flex items-center gap-4 my-5">
               <div className="flex items-center space-x-2">
                 <input
                   type="radio"
@@ -100,6 +100,8 @@ const Login = () => {
                   value="student"
                   checked={input.role === "student"}
                   onChange={changeEventHandler}
+                  id="r1"
+                  className="form-radio"
                 />
                 <Label htmlFor="r1">Students</Label>
               </div>
@@ -110,6 +112,8 @@ const Login = () => {
                   value="recruiter"
                   checked={input.role === "recruiter"}
                   onChange={changeEventHandler}
+                  id="r2"
+                  className="form-radio"
                 />
                 <Label htmlFor="r2">Recruiter</Label>
               </div>
@@ -127,7 +131,7 @@ const Login = () => {
             <span className="text-sm">
               Do not have an account?{" "}
               <Link
-                to={"/signup"}
+                to="/signup"
                 className="text-blue-500 cursor-pointer underline"
               >
                 Signup
