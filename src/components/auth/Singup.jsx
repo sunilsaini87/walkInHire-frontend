@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "@/redux/authSlice";
 import { Loader2 } from "lucide-react";
+import Footer from "../shared/Footer";
 
 const Singup = () => {
   const [input, setInput] = useState({
@@ -72,111 +73,116 @@ const Singup = () => {
       navigate("/");
     }
   }, []);
+
   return (
     <>
-      <Navbar />
-      <div className="flex items-center justify-center max-w-7xl mx-auto">
-        <form
-          onSubmit={submitHandler}
-          className="w-1/2 border border-gray-200 rounded-md p-4 my-10"
-        >
-          <h1 className="font-bold text-xl mb-4">Sign Up</h1>
-          <div className="my-2">
-            <Label>Full Name</Label>
-            <Input
-              type="text"
-              value={input.fullname}
-              name="fullname"
-              onChange={changeEventHandler}
-              placeholder="patel"
-            />
-          </div>
-          <div className="my-2">
-            <Label>Email</Label>
-            <Input
-              type="email"
-              value={input.email}
-              name="email"
-              onChange={changeEventHandler}
-              placeholder="patel@gmail.com"
-            />
-          </div>
-          <div className="my-2">
-            <Label>Phone Number</Label>
-            <Input
-              type="text"
-              value={input.phoneNumber}
-              name="phoneNumber"
-              onChange={changeEventHandler}
-              placeholder="+918080808080"
-            />
-          </div>
-          <div className="my-2">
-            <Label>Password</Label>
-            <Input
-              type="password"
-              value={input.password}
-              name="password"
-              onChange={changeEventHandler}
-              placeholder="password"
-            />
-          </div>
-          <div className="flex items-center justify-between">
-            <RadioGroup className="flex items-center gap-4 my-5">
-              <div className="flex items-center space-x-2">
-                <Input
-                  type="radio"
-                  name="role"
-                  value="student"
-                  checked={input.role === "student"}
-                  onChange={changeEventHandler}
-                  className="cursor-pointer"
-                />
-                <Label htmlFor="r1">Students</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Input
-                  type="radio"
-                  name="role"
-                  value="recruiter"
-                  checked={input.role === "recruiter"}
-                  onChange={changeEventHandler}
-                  className="cursor-pointer"
-                />
-                <Label htmlFor="r2">Recruiter</Label>
-              </div>
-            </RadioGroup>
-            <div className="flex items-center gap-2">
-              <Label>Profile</Label>
-              <Input
-                accept="image/*"
-                type="file"
-                onChange={changeFileHandler}
-                className="cursor-pointer"
-              />
+      <section className="bg-slate-500">
+        <Navbar />
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+          <div className="w-full bg-slate-700 text-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <form onSubmit={submitHandler} className="space-y-2 md:space-y-6">
+                <h1 className="font-bold text-xl mb-1 text-center">Sign Up</h1>
+                <div className="my-1">
+                  <Label>Full Name</Label>
+                  <Input
+                    type="text"
+                    value={input.fullname}
+                    name="fullname"
+                    onChange={changeEventHandler}
+                    placeholder="Full Name"
+                  />
+                </div>
+                <div className="my-1">
+                  <Label>Email</Label>
+                  <Input
+                    type="email"
+                    value={input.email}
+                    name="email"
+                    onChange={changeEventHandler}
+                    placeholder="Email@gmail.com"
+                  />
+                </div>
+                <div className="my-1">
+                  <Label>Phone Number</Label>
+                  <Input
+                    type="text"
+                    value={input.phoneNumber}
+                    name="phoneNumber"
+                    onChange={changeEventHandler}
+                    placeholder="+911234567890"
+                  />
+                </div>
+                <div className="my-1">
+                  <Label>Password</Label>
+                  <Input
+                    type="password"
+                    value={input.password}
+                    name="password"
+                    onChange={changeEventHandler}
+                    placeholder="Password"
+                  />
+                </div>
+                <div className="flex items-center justify-between">
+                  <RadioGroup className="flex items-center gap-4 my-1">
+                    <div className="flex items-center space-x-2">
+                      <Input
+                        type="radio"
+                        name="role"
+                        value="student"
+                        checked={input.role === "student"}
+                        onChange={changeEventHandler}
+                        className="cursor-pointer"
+                      />
+                      <Label htmlFor="r1">Students</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Input
+                        type="radio"
+                        name="role"
+                        value="recruiter"
+                        checked={input.role === "recruiter"}
+                        onChange={changeEventHandler}
+                        className="cursor-pointer"
+                      />
+                      <Label htmlFor="r2">Recruiter</Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Label>Profile</Label>
+                  <Input
+                    accept="image/*"
+                    type="file"
+                    onChange={changeFileHandler}
+                    className="cursor-pointer"
+                  />
+                </div>
+                {loading ? (
+                  <Button className="w-full my-4">
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Please wait
+                  </Button>
+                ) : (
+                  <Button type="submit" className="w-full my-4">
+                    Sign Up
+                  </Button>
+                )}
+                <span className="text-sm">
+                  Already have an account?{" "}
+                  <Link
+                    to={"/login"}
+                    className="text-blue-400 cursor-pointer underline"
+                  >
+                    Login
+                  </Link>
+                </span>
+              </form>
             </div>
           </div>
-          {loading ? (
-            <Button className="w-full my-4">
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Please wait
-            </Button>
-          ) : (
-            <Button type="submit" className="w-full my-4">
-              Sign Up
-            </Button>
-          )}
-          <span className="text-sm">
-            Already have an account?{" "}
-            <Link
-              to={"/login"}
-              className="text-blue-500 cursor-pointer underline"
-            >
-              Login
-            </Link>
-          </span>
-        </form>
-      </div>
+        </div>
+        <Footer />
+      </section>
     </>
   );
 };
