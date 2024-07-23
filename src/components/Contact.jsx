@@ -5,7 +5,7 @@ function Contact() {
   return (
     <>
       <Navbar />
-      <div className="relative bg-blue-300 text-white py-16 px-4 h-screen">
+      <div className="relative text-white py-16 px-4 h-screen">
         <div className="absolute inset-0">
           <img
             src="/aboutbg.jpg"
@@ -24,7 +24,7 @@ function Contact() {
             <br /> Reach out to us today!
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-            <div className="bg-blue-800 bg-opacity-75 rounded-lg p-6 flex flex-col items-center w-full md:w-1/3 opacity-60">
+            <div className="bg-blue-800 bg-opacity-10 rounded-lg p-6 flex flex-col items-center w-full md:w-1/3">
               <svg
                 className="w-12 h-12 mb-4"
                 fill="currentColor"
@@ -37,7 +37,7 @@ function Contact() {
               </h3>
               <p>Find the latest walk-in job opportunities.</p>
             </div>
-            <div className="bg-blue-800 bg-opacity-75 rounded-lg p-6 flex flex-col items-center w-full md:w-1/3 opacity-60">
+            <div className="bg-blue-800 bg-opacity-15 rounded-lg p-6 flex flex-col items-center w-full md:w-1/3">
               <svg
                 className="w-12 h-12 mb-4"
                 fill="currentColor"
@@ -48,7 +48,7 @@ function Contact() {
               <h3 className="text-xl font-semibold mb-2">On-the-Spot Hiring</h3>
               <p>Get hired instantly through our platform.</p>
             </div>
-            <div className="bg-blue-800 bg-opacity-75 rounded-lg p-6 flex flex-col items-center w-full md:w-1/3 opacity-60">
+            <div className="bg-blue-800 bg-opacity-15 rounded-lg p-6 flex flex-col items-center w-full md:w-1/3">
               <svg
                 className="w-12 h-12 mb-4"
                 fill="currentColor"
