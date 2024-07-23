@@ -81,7 +81,7 @@ const Signup = () => {
       <section className="bg-[url('/walkin.jpg')] bg-contain bg-no-repeat bg-center min-h-screen flex flex-col">
         <Navbar />
         <div className="flex flex-grow items-center justify-center px-6 py-8 mx-auto w-full">
-          <div className="w-full bg-slate-700 text-white rounded-lg shadow dark:border sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full bg-slate-200 text-black rounded-lg shadow dark:border sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <form onSubmit={submitHandler} className="space-y-2 md:space-y-6">
                 <h1 className="font-bold text-xl mb-1 text-center">Sign Up</h1>

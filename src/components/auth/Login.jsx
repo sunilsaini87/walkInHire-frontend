@@ -64,10 +64,10 @@ const Login = () => {
     <>
       <section className="bg-[url('/walkin.jpg')] bg-cover bg-center min-h-screen flex flex-col">
         <Navbar />
-        <div className="flex items-center justify-center flex-grow text-white">
+        <div className="flex items-center justify-center flex-grow text-black">
           <form
             onSubmit={submitHandler}
-            className="w-full max-w-md mx-4 p-4 rounded-md bg-slate-700"
+            className="w-full max-w-md mx-4 p-4 rounded-md bg-slate-200"
           >
             <h1 className="font-bold text-xl mb-4 text-center">Login</h1>
             <div className="my-2">
