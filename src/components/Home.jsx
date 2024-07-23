@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useGetAllJobs from "@/hooks/useGetAllJobs";
 import HomeContent from "./HomeContent";
+import Faqs from "./Faqs";
 
 const Home = () => {
   useGetAllJobs();
@@ -25,6 +26,7 @@ const Home = () => {
       <CategoryCarousel />
       <LatestJobs />
       <HomeContent />
+      <Faqs />
       <Footer />
     </div>
   );

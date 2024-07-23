@@ -14,6 +14,7 @@ import CreateJobs from "./components/admin/CreateJobs";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
 import Applicants from "./components/admin/Applicants";
 import Contact from "./components/Contact";
+import Faqs from "./components/Faqs";
 
 const appRouter = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/faq",
+    element: <Faqs />,
   },
   // Admin Dashboard Route Started
   {
