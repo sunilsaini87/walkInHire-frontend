@@ -13,6 +13,7 @@ import Browse from "./components/Browse";
 import CreateJobs from "./components/admin/CreateJobs";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
 import Applicants from "./components/admin/Applicants";
+import Contact from "./components/Contact";
 
 const appRouter = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
   },
   // Admin Dashboard Route Started
   {
