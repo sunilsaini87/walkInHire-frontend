@@ -10,26 +10,25 @@ import { UpdateProfileDialog } from "./UpdateProfileDialog";
 import { useNavigate } from "react-router-dom";
 import useGetAppliedJobs from "@/hooks/useGetAppliedJobs";
 import { Label } from "./ui/label";
-// import { Input } from './ui/input'
 
 const Profile = () => {
   useGetAppliedJobs();
   const [open, setOpen] = useState(false);
   const { authUser } = useSelector((store) => store.auth);
   const navigate = useNavigate();
-  const resume = true;
+
   // protect route
   useEffect(() => {
     if (!authUser) {
       navigate("/");
     }
-  }, []);
+  }, [authUser, navigate]);
 
   return (
     <div>
       <Navbar />
       <div className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl my-5 p-8">
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-4">
             <Avatar className="h-24 w-24">
               <AvatarImage
@@ -39,16 +38,16 @@ const Profile = () => {
             </Avatar>
             <div>
               <h1 className="font-medium text-xl">{authUser?.fullname}</h1>
-              <p className="">{`${
-                authUser?.profile?.bio
+              <p className="">
+                {authUser?.profile?.bio
                   ? authUser?.profile?.bio
-                  : "Add your bio here"
-              }`}</p>
+                  : "Add your bio here"}
+              </p>
             </div>
           </div>
           <Button
             onClick={() => setOpen(true)}
-            className="text-right"
+            className="text-right mt-4 md:mt-0"
             variant="outline"
           >
             <Pen />
@@ -67,7 +66,7 @@ const Profile = () => {
 
         <div className="my-5">
           <h1 className="my-2 font-bold">Skills</h1>
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap items-center gap-1">
             {authUser?.profile?.skills.length !== 0 ? (
               authUser?.profile?.skills?.map((skill, index) => (
                 <Badge key={index}>{skill}</Badge>
@@ -92,7 +91,7 @@ const Profile = () => {
           )}
         </div>
       </div>
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl">
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl mt-5">
         <h1 className="text-xl font-bold p-5">Applied Jobs</h1>
         <ApplicationTable />
       </div>

@@ -23,7 +23,7 @@ export function UpdateProfileDialog({ open, setOpen }) {
     email: authUser?.email,
     phoneNumber: authUser?.phoneNumber,
     bio: authUser?.profile?.bio,
-    skills: authUser?.profile?.skills?.map((skill) => skill),
+    skills: authUser?.profile?.skills?.join(", "),
     file: authUser?.profile?.resume,
   });
   const dispatch = useDispatch();
@@ -44,7 +44,7 @@ export function UpdateProfileDialog({ open, setOpen }) {
     formData.append("email", input.email);
     formData.append("phoneNumber", input.phoneNumber);
     formData.append("bio", input.bio);
-    formData.append("skills", input.skills);
+    formData.append("skills", input.skills.split(","));
     if (input.file) {
       formData.append("file", input.file);
     }
@@ -84,8 +84,8 @@ export function UpdateProfileDialog({ open, setOpen }) {
         </DialogHeader>
         <form onSubmit={submitHandler}>
           <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right">
+            <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+              <Label htmlFor="name" className="text-right md:text-left">
                 Name
               </Label>
               <Input
@@ -93,11 +93,11 @@ export function UpdateProfileDialog({ open, setOpen }) {
                 value={input.fullname}
                 name="fullname"
                 onChange={changeHandler}
-                className="col-span-3"
+                className="col-span-3 w-full"
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="email" className="text-right">
+            <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+              <Label htmlFor="email" className="text-right md:text-left">
                 Email
               </Label>
               <Input
@@ -105,11 +105,11 @@ export function UpdateProfileDialog({ open, setOpen }) {
                 value={input.email}
                 name="email"
                 onChange={changeHandler}
-                className="col-span-3"
+                className="col-span-3 w-full"
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="number" className="text-right">
+            <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+              <Label htmlFor="number" className="text-right md:text-left">
                 Number
               </Label>
               <Input
@@ -117,11 +117,11 @@ export function UpdateProfileDialog({ open, setOpen }) {
                 value={input.phoneNumber}
                 name="phoneNumber"
                 onChange={changeHandler}
-                className="col-span-3"
+                className="col-span-3 w-full"
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="bio" className="text-right">
+            <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+              <Label htmlFor="bio" className="text-right md:text-left">
                 Bio
               </Label>
               <Input
@@ -129,11 +129,11 @@ export function UpdateProfileDialog({ open, setOpen }) {
                 value={input.bio}
                 name="bio"
                 onChange={changeHandler}
-                className="col-span-3"
+                className="col-span-3 w-full"
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="skills" className="text-right">
+            <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+              <Label htmlFor="skills" className="text-right md:text-left">
                 Skills
               </Label>
               <Input
@@ -141,11 +141,11 @@ export function UpdateProfileDialog({ open, setOpen }) {
                 value={input.skills}
                 name="skills"
                 onChange={changeHandler}
-                className="col-span-3"
+                className="col-span-3 w-full"
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="file" className="text-right">
+            <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+              <Label htmlFor="file" className="text-right md:text-left">
                 Resume
               </Label>
               <Input
@@ -154,7 +154,7 @@ export function UpdateProfileDialog({ open, setOpen }) {
                 name="file"
                 accept="application/pdf"
                 onChange={fileChangeHandler}
-                className="col-span-3"
+                className="col-span-3 w-full"
               />
             </div>
           </div>

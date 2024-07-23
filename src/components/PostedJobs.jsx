@@ -19,17 +19,20 @@ function PostedJobs() {
   }, [text]);
 
   return (
-    <div>
+    <div className="min-h-screen bg-gray-100">
       <Navbar />
-      <div className="max-w-6xl mx-auto my-10">
-        <div className="flex items-center justify-between my-5">
+      <div className="max-w-6xl mx-auto my-10 px-4">
+        <div className="flex flex-col md:flex-row items-center justify-between my-5 gap-4">
           <Input
             value={text}
             onChange={(e) => setText(e.target.value)}
-            className="w-[30%]"
+            className="flex-1 md:w-[30%] mb-4 md:mb-0"
             placeholder="Filter by company name & role"
           />
-          <Button onClick={() => navigate("/admin/jobs/create")}>
+          <Button
+            onClick={() => navigate("/admin/jobs/create")}
+            className="w-full md:w-auto"
+          >
             New Jobs
           </Button>
         </div>

@@ -41,7 +41,7 @@ const Navbar = () => {
             menuOpen ? "flex" : "hidden"
           } md:flex`}
         >
-          <ul className="flex flex-col md:flex-row font-medium items-center gap-5">
+          <ul className="flex flex-col md:flex-row font-medium items-center gap-5 bg-slate-200 md:bg-transparent w-full md:w-auto absolute md:relative top-16 left-0 md:top-auto md:left-auto p-4 md:p-0 shadow-md md:shadow-none">
             {authUser && authUser.role === "recruiter" ? (
               <>
                 <li className="hover:text-[#435f8a] cursor-pointer">
@@ -69,7 +69,7 @@ const Navbar = () => {
             )}
           </ul>
           {!authUser ? (
-            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 bg-slate-200 md:bg-transparent p-4 md:p-0">
               <Link to="/login">
                 <Button variant={"outline"}>Login</Button>
               </Link>

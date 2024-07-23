@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
@@ -7,12 +6,12 @@ import { Button } from "../ui/button";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "@/redux/authSlice";
-
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
+  // eslint-disable-next-line no-unused-vars
   SelectLabel,
   SelectTrigger,
   SelectValue,
@@ -82,12 +81,13 @@ const CreateJobs = () => {
       companyId: "",
     });
   };
+
   return (
     <div>
       <Navbar />
-      <div className="flex items-center justify-center w-screen my-5">
-        <div className="p-8 max-w-4xl border border-gray-200 shadow-lg rounded-md">
-          <div className="grid grid-cols-2 gap-2">
+      <div className="flex flex-col items-center w-full my-5 px-4 sm:px-6 lg:px-8">
+        <div className="p-6 sm:p-8 max-w-full sm:max-w-4xl border border-gray-200 shadow-lg rounded-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <Label>Title</Label>
               <Input
@@ -175,38 +175,38 @@ const CreateJobs = () => {
               />
             </div>
             {companies.length !== 0 && (
-              <Select onValueChange={handleSelectChange}>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Select a Company" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    {companies &&
-                      companies.map((company) => {
-                        return (
+              <div className="col-span-2">
+                <Select onValueChange={handleSelectChange}>
+                  <SelectTrigger className="w-full sm:w-[180px]">
+                    <SelectValue placeholder="Select a Company" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      {companies &&
+                        companies.map((company) => (
                           <SelectItem
                             key={company?._id}
                             value={company?.name.toLowerCase()}
                           >
                             {company?.name}
                           </SelectItem>
-                        );
-                      })}
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+                        ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </div>
             )}
           </div>
           <Button
             onClick={submitHandler}
-            disabled={companies?.length === 0 ? true : false}
+            disabled={companies?.length === 0}
             className="w-full mt-4"
           >
             Post New Job
           </Button>
           {companies.length === 0 && (
-            <p className="text-red-600 text-xs font-bold text-center my-3">
-              *Please register a company first, before posting a jobs
+            <p className="text-red-600 text-xs font-bold text-center mt-3">
+              *Please register a company first, before posting a job
             </p>
           )}
         </div>

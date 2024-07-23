@@ -22,7 +22,7 @@ const HeroSection = () => {
           <img
             src="/hero.jpg"
             alt="Hero"
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-50"
           />
         </div>
         <div className="relative z-10 text-center text-black px-6 md:px-12">

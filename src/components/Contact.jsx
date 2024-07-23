@@ -5,20 +5,20 @@ function Contact() {
   return (
     <>
       <Navbar />
-      <div className="relative text-white py-16 px-4 h-screen">
+      <div className="relative text-white py-16 px-4 min-h-screen">
         <div className="absolute inset-0">
           <img
             src="/aboutbg.jpg"
             alt="Background"
-            className="w-full h-full object-cover opacity-50"
+            className="w-full h-full object-cover opacity-70"
           />
         </div>
         <div className="relative max-w-7xl mx-auto text-center">
-          <h1 className="text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Get in Touch with
-            <span className="text-purple-800">WalkInHire</span>
+            <span className="text-purple-800"> WalkInHire</span>
           </h1>
-          <p className="mb-12 text-lg">
+          <p className="mb-12 text-base md:text-lg">
             We are here to assist you with your job search and recruitment
             needs.
             <br /> Reach out to us today!
@@ -35,7 +35,9 @@ function Contact() {
               <h3 className="text-xl font-semibold mb-2">
                 Immediate Job Openings
               </h3>
-              <p>Find the latest walk-in job opportunities.</p>
+              <p className="text-center">
+                Find the latest walk-in job opportunities.
+              </p>
             </div>
             <div className="bg-blue-800 bg-opacity-15 rounded-lg p-6 flex flex-col items-center w-full md:w-1/3">
               <svg
@@ -46,7 +48,9 @@ function Contact() {
                 <path d="M18 8H16V6H14V4H10V6H8V8H6V14H8V16H10V18H14V16H16V14H18V8ZM10 8H14V14H10V8Z" />
               </svg>
               <h3 className="text-xl font-semibold mb-2">On-the-Spot Hiring</h3>
-              <p>Get hired instantly through our platform.</p>
+              <p className="text-center">
+                Get hired instantly through our platform.
+              </p>
             </div>
             <div className="bg-blue-800 bg-opacity-15 rounded-lg p-6 flex flex-col items-center w-full md:w-1/3">
               <svg
@@ -59,22 +63,24 @@ function Contact() {
               <h3 className="text-xl font-semibold mb-2">
                 Support & Inquiries
               </h3>
-              <p>Contact us for any assistance or questions.</p>
+              <p className="text-center">
+                Contact us for any assistance or questions.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="rgb(237, 244, 252) py-16 px-4">
+      <div className="bg-blue-50 py-16 px-4">
         <div className="max-w-7xl mx-auto text-center md:text-left">
           <h2 className="text-3xl font-bold mb-6">Stay Connected</h2>
-          <p className="mb-12 text-lg">
+          <p className="mb-12 text-base md:text-lg">
             Whether you are a job seeker or an employer, we are here to help.
             <br />
             Contact us for any inquiries or support.
           </p>
           <div className="flex flex-col md:flex-row justify-center md:justify-start items-center md:items-start gap-8">
-            <div className="bg-blue-100 rounded-lg p-6 w-full md:w-1/3">
+            <div className="bg-white shadow rounded-lg p-6 w-full md:w-1/3">
               <h3 className="text-xl font-semibold mb-2">Job Seekers</h3>
               <p className="text-blue-500">
                 <a href="mailto:support@walkinhire.com">
@@ -83,7 +89,7 @@ function Contact() {
               </p>
               <p>+1 (555) 123-4567</p>
             </div>
-            <div className="bg-blue-100 rounded-lg p-6 w-full md:w-1/3">
+            <div className="bg-white shadow rounded-lg p-6 w-full md:w-1/3">
               <h3 className="text-xl font-semibold mb-2">Employers</h3>
               <p className="text-blue-500">
                 <a href="mailto:employers@walkinhire.com">
@@ -92,7 +98,7 @@ function Contact() {
               </p>
               <p>+1 (555) 234-5678</p>
             </div>
-            <div className="bg-blue-100 rounded-lg p-6 w-full md:w-1/3">
+            <div className="bg-white shadow rounded-lg p-6 w-full md:w-1/3">
               <h3 className="text-xl font-semibold mb-2">General Inquiry</h3>
               <p className="text-blue-500">
                 <a href="mailto:info@walkinhire.com">info@walkinhire.com</a>
