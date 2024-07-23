@@ -18,7 +18,9 @@ const Applicants = () => {
       try {
         axios.defaults.withCredentials = true;
         const res = await axios.get(
-          `http://localhost:8000/api/v1/application/${id}/applicants`
+          `${
+            import.meta.env.VITE_API_BASE_URL
+          }/api/v1/application/${id}/applicants`
         );
         if (res.data.success) {
           dispatch(setAllApplicants(res.data.job));

@@ -24,7 +24,9 @@ const JobDescription = () => {
     try {
       axios.defaults.withCredentials = true;
       const res = await axios.get(
-        `http://localhost:8000/api/v1/application/apply/${params.id}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/application/apply/${
+          params.id
+        }`
       );
       if (res.data.success) {
         setIsApplied(true); // Update the local state
@@ -49,7 +51,7 @@ const JobDescription = () => {
       try {
         axios.defaults.withCredentials = true;
         const res = await axios.get(
-          `http://localhost:8000/api/v1/job/${params.id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/v1/job/${params.id}`
         );
         if (res.data.success) {
           dispatch(setSingleJobById(res.data.job));
