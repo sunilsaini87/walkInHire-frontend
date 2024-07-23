@@ -151,7 +151,7 @@ function HomeContent() {
           </div>
         </div>
       </div>
-      <div className="bg-blue-50 py-12">
+      <div id="faq" className="bg-blue-50 py-12">
         <div className="max-w-7xl px-4 ml-96 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-8">
             Frequently Asked Questions

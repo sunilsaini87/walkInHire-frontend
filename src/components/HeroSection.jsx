@@ -17,12 +17,12 @@ const HeroSection = () => {
 
   return (
     <>
-      <section className="relative h-screen flex items-center justify-center">
+      <section className="relative h-screen flex items-center justify-center bg-blue-300">
         <div className="absolute inset-0 z-0">
           <img
             src="/hero.jpg"
             alt="Hero"
-            className="w-full h-full object-cover opacity-35"
+            className="w-full h-full object-cover opacity-30"
           />
         </div>
         <div className="relative z-10 text-center text-black px-6 md:px-12">
@@ -30,6 +30,7 @@ const HeroSection = () => {
             Search, Apply & Get Your{" "}
             <span className="text-[#6a42b5]">Dream Jobs</span>
           </h1>
+          <br />
           <p className="text-lg md:text-xl mb-6 text-rose-950">
             Explore immediate job openings and walk-in interviews.
             <br /> Start your career journey with{" "}

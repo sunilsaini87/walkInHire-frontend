@@ -5,7 +5,7 @@ function Contact() {
   return (
     <>
       <Navbar />
-      <div className="relative bg-blue-600 text-white py-16 px-4 h-screen">
+      <div className="relative bg-blue-300 text-white py-16 px-4 h-screen">
         <div className="absolute inset-0">
           <img
             src="/aboutbg.jpg"
