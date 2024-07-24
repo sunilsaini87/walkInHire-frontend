@@ -1,7 +1,5 @@
 # WalkInHire
 
-![WalkInHire Logo](./public/walkinhire.png)
-
 WalkInHire is a job portal platform designed to facilitate walk-in interviews. The platform connects job seekers with employers, making it easier for both parties to schedule and manage interviews in a convenient and streamlined way.
 
 ## Features
