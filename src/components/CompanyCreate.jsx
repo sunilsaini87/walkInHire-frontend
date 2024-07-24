@@ -35,17 +35,16 @@ const CompanyCreate = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.response?.data?.message);
+      const errorMessage =
+        error.response?.data?.message || "Something went wrong.";
+      toast.error(errorMessage);
     }
   };
 
   useEffect(() => {
-    if (companyName.trim() !== "") {
-      setDisable(false);
-    } else {
-      setDisable(true);
-    }
+    setDisable(companyName.trim() === "");
   }, [companyName]);
+
   return (
     <div>
       <Navbar />
